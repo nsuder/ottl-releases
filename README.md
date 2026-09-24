@@ -1,7 +1,6 @@
 # Ottl downloads
 
-Public download home for **Ottl**, native macOS dictation with an axolotl
-companion. The app itself is developed in a private repository; this one holds
+Public download home for **Ottl**, native macOS dictation. The app itself is developed in a private repository; this one holds
 only the signed, notarized builds and the download page.
 
 - **Download page:** https://nsuder.github.io/ottl-releases/

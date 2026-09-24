@@ -4,55 +4,48 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ottl — dictation for Mac</title>
-<meta name="description" content="Hold a key, speak, release. Ottl is native macOS dictation with an axolotl companion. Download the notarized app.">
-<link rel="icon" href="axolotl.png">
+<meta name="description" content="Hold a key, speak, release. Ottl is native dictation for the Mac. Download the notarized app.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
 <style>
 :root{
-  --ink:#090824; --paper:#FCFAF7; --pink:#FED5DA; --magenta:#F65386; --rule:#D9D4CC; --muted:#5B5A6E;
-  --u:8px;
+  --text:#1d1d1f; --text2:#6e6e73; --bg:#ffffff; --bg2:#f5f5f7; --line:#e5e5ea; --accent:#0071e3; --u:8px;
 }
 @media (prefers-color-scheme: dark){
-  :root{ --ink:#F3F1EC; --paper:#0E0D22; --pink:#3A1A26; --magenta:#FF6B9A; --rule:#2A2940; --muted:#A8A6B8; }
+  :root{ --text:#f5f5f7; --text2:#a1a1a6; --bg:#111113; --bg2:#1c1c1e; --line:#2c2c2e; --accent:#2997ff; }
 }
 *{box-sizing:border-box}
-html,body{margin:0;background:var(--paper);color:var(--ink);
-  font-family:"Univers","Univers Next","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-.wrap{max-width:calc(var(--u)*110);margin:0 auto;padding:calc(var(--u)*6) calc(var(--u)*3)}
-header{display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:var(--u)}
-.wordmark{font-weight:700;font-size:28px;letter-spacing:-0.02em}
-.wordmark b{color:var(--magenta);font-weight:700}
-nav a{margin-left:calc(var(--u)*3);text-decoration:none;font-size:15px;color:var(--muted)}
-nav a:hover{color:var(--ink)}
-.hero{display:grid;grid-template-columns:1fr auto;gap:calc(var(--u)*4);align-items:end;padding:calc(var(--u)*8) 0 calc(var(--u)*6);border-bottom:1px solid var(--rule)}
-h1{font-size:clamp(34px,6vw,60px);line-height:1.02;letter-spacing:-0.03em;margin:0 0 calc(var(--u)*3);font-weight:700}
-.lede{font-size:20px;max-width:34em;margin:0 0 calc(var(--u)*4);color:var(--muted)}
-.axo{image-rendering:pixelated;width:249px;height:132px;display:block}
-.cta{display:inline-flex;align-items:center;gap:var(--u);background:var(--ink);color:var(--paper);text-decoration:none;
-  padding:calc(var(--u)*2) calc(var(--u)*3);font-weight:700;font-size:18px;border:2px solid var(--ink)}
-.cta:hover{background:var(--magenta);border-color:var(--magenta);color:#fff}
-.cta.disabled{opacity:.5;pointer-events:none}
-.meta{margin-top:calc(var(--u)*1.5);font-size:14px;color:var(--muted)}
-.meta code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;word-break:break-all}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:calc(var(--u)*3);padding:calc(var(--u)*6) 0;border-bottom:1px solid var(--rule)}
-.grid h2{grid-column:span 4;margin:0;font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
-.grid .body{grid-column:span 8}
+html,body{margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:880px;margin:0 auto;padding:calc(var(--u)*4) calc(var(--u)*3)}
+header{display:flex;align-items:center;justify-content:space-between;padding-bottom:calc(var(--u)*2);border-bottom:1px solid var(--line)}
+.wordmark{font-weight:600;font-size:18px;letter-spacing:-0.01em;color:var(--text)}
+nav a{margin-left:calc(var(--u)*3);font-size:14px;color:var(--text2)}
+nav a:hover{color:var(--text);text-decoration:none}
+.hero{padding:calc(var(--u)*10) 0 calc(var(--u)*8);border-bottom:1px solid var(--line)}
+h1{font-size:clamp(34px,5.5vw,52px);line-height:1.08;letter-spacing:-0.025em;margin:0 0 calc(var(--u)*2);font-weight:600}
+.lede{font-size:19px;max-width:32em;margin:0 0 calc(var(--u)*4);color:var(--text2)}
+.cta{display:inline-flex;align-items:center;gap:var(--u);background:var(--text);color:var(--bg);
+  padding:12px 20px;font-weight:500;font-size:15px;border-radius:8px}
+.cta:hover{opacity:.88;text-decoration:none}
+.meta{margin-top:calc(var(--u)*1.5);font-size:13px;color:var(--text2)}
+.meta code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;word-break:break-all}
+.grid{display:grid;grid-template-columns:200px 1fr;gap:calc(var(--u)*4);padding:calc(var(--u)*5) 0;border-bottom:1px solid var(--line)}
+.grid h2{margin:0;font-size:14px;color:var(--text2);font-weight:500}
 .grid .body p:first-child{margin-top:0}
+.grid .body p:last-child{margin-bottom:0}
 ol{padding-left:1.2em;margin:0}
 ol li{margin:0 0 var(--u)}
-kbd{font-family:inherit;font-weight:700;border:1px solid var(--rule);border-bottom-width:2px;padding:0 6px;border-radius:4px;font-size:.92em;background:var(--pink);color:#090824}
-@media (prefers-color-scheme: dark){ kbd{color:var(--ink)} }
-.note{background:var(--pink);color:#090824;padding:calc(var(--u)*2) calc(var(--u)*2.5);border-left:4px solid var(--magenta)}
-@media (prefers-color-scheme: dark){ .note{color:var(--ink)} }
-footer{padding:calc(var(--u)*4) 0;font-size:14px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--u)}
-footer a{color:var(--muted)}
+kbd{font-family:inherit;font-size:.88em;font-weight:500;border:1px solid var(--line);border-bottom-width:2px;padding:0 6px;border-radius:5px;background:var(--bg2);color:var(--text)}
+.note{background:var(--bg2);padding:calc(var(--u)*2) calc(var(--u)*2.5);border-radius:10px;margin:0}
+footer{padding:calc(var(--u)*4) 0;font-size:13px;color:var(--text2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--u)}
+footer a{color:var(--text2)}
 @media (max-width:720px){
-  .hero{grid-template-columns:1fr}
-  .axo{order:-1;width:166px;height:88px}
-  .grid{grid-template-columns:1fr}
-  .grid h2,.grid .body{grid-column:auto}
-  header{flex-direction:column;gap:var(--u)}
+  .hero{padding:calc(var(--u)*6) 0}
+  .grid{grid-template-columns:1fr;gap:calc(var(--u)*1.5)}
+  header{flex-direction:column;align-items:flex-start;gap:var(--u)}
   nav a{margin:0 calc(var(--u)*2) 0 0}
 }
 </style>
@@ -60,7 +53,7 @@ footer a{color:var(--muted)}
 <body>
 <div class="wrap">
 <header>
-  <div class="wordmark">Ottl<b>.</b></div>
+  <div class="wordmark">Ottl</div>
   <nav>
     <a href="#install">Install</a>
     <a href="#keys">Keys</a>
@@ -72,11 +65,10 @@ footer a{color:var(--muted)}
 <section class="hero">
   <div>
     <h1>Hold a key.<br>Speak. Release.</h1>
-    <p class="lede">Ottl is native dictation for the Mac. Your words land in whatever app you're typing in. A small axolotl shows you exactly when the microphone is on.</p>
+    <p class="lede">Ottl is native dictation for the Mac. Your words land in whatever app you're typing in. A small bar on screen shows exactly when the microphone is on.</p>
     <a class="cta" id="download" href="https://github.com/nsuder/ottl-releases/releases/latest">Download for Mac</a>
     <div class="meta" id="meta">Apple silicon and Intel · macOS 14 Sonoma or later · signed and notarized by Apple</div>
   </div>
-  <img class="axo" src="axolotl.png" alt="Ottl's pixel axolotl" width="249" height="132">
 </section>
 
 <section class="grid" id="install">
@@ -103,7 +95,7 @@ footer a{color:var(--muted)}
 <section class="grid" id="privacy">
   <h2>Privacy</h2>
   <div class="body">
-    <p>Ottl records only while you hold the key or have started listening, and the axolotl is visible whenever the microphone is on. Nothing leaves your Mac unless you turn cloud services on, and the window always shows which mode is active. No audio files, no transcript logs, no analytics. Provider keys live only in the macOS Keychain.</p>
+    <p>Ottl records only while you hold the key or have started listening, and the bar on screen is visible whenever the microphone is on. Nothing leaves your Mac unless you turn cloud services on, and the window always shows which mode is active. No audio files, no transcript logs, no analytics. Provider keys live only in the macOS Keychain.</p>
   </div>
 </section>
 
