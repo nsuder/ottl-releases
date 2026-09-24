@@ -35,6 +35,12 @@ alone is enough. Without keys, Ottl uses Apple's on-device recognition.
 line about what happened and the *Last recording* and *Last delivery* lines from
 Ottl → Settings → Diagnostics (they contain no dictated text). Issues are public.
 
+## Updates
+
+Once a day Ottl fetches [`appcast.json`](appcast.json) from this site to see
+whether a newer build exists, and shows a Download link if so. Nothing else is
+sent and nothing is installed automatically. Settings → General turns it off.
+
 ## Verify a download
 
 ```bash
@@ -57,4 +63,5 @@ gh release create v<version> --repo nsuder/ottl-releases \
 ```
 
 The download page reads the latest release from the GitHub API, so the button
-updates by itself.
+updates by itself. Then copy `dist/release/appcast.json` to the root of this
+repository and push it — that is what installed copies check.
