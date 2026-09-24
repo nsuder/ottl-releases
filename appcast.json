@@ -1,7 +1,7 @@
 {
-  "version": "0.1.73",
-  "build": 90,
+  "version": "0.1.74",
+  "build": 91,
   "minimumSystemVersion": "14.0",
-  "url": "https://github.com/nsuder/ottl-releases/releases/tag/v0.1.73",
-  "sha256": "17e707c8fd7656581c944b3efb653b3344ccd181546a035dd8eca6a17faafc5e"
+  "url": "https://github.com/nsuder/ottl-releases/releases/tag/v0.1.74",
+  "sha256": "a3d47027ced7595a64ea8ddbfd4abdce9f8a2768411fa27173f52c989ca01212"
 }
