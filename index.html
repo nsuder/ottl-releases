@@ -74,7 +74,7 @@ footer a{color:var(--muted)}
     <h1>Hold a key.<br>Speak. Release.</h1>
     <p class="lede">Ottl is native dictation for the Mac. Your words land in whatever app you're typing in. A small axolotl shows you exactly when the microphone is on.</p>
     <a class="cta" id="download" href="https://github.com/nsuder/ottl-releases/releases/latest">Download for Mac</a>
-    <div class="meta" id="meta">Apple silicon Macs · macOS 14 Sonoma or later · signed and notarized by Apple</div>
+    <div class="meta" id="meta">Apple silicon and Intel · macOS 14 Sonoma or later · signed and notarized by Apple</div>
   </div>
   <img class="axo" src="axolotl.png" alt="Ottl's pixel axolotl" width="249" height="132">
 </section>
@@ -84,7 +84,7 @@ footer a{color:var(--muted)}
   <div class="body">
     <ol>
       <li>Open the downloaded <strong>.dmg</strong> and drag <strong>Ottl</strong> into <strong>Applications</strong>.</li>
-      <li>Open Ottl from Applications and click <strong>Enable dictation</strong> in its window. macOS then asks about the <strong>microphone</strong> and <strong>speech recognition</strong>. Allow both. (Clicked Don't Allow? The same button now reads <strong>Open System Settings…</strong> in 0.1.61; until then, turn Ottl on in System Settings → Privacy &amp; Security → Microphone and → Speech Recognition.)</li>
+      <li>Open Ottl from Applications and click <strong>Enable dictation</strong> in its window. macOS then asks about the <strong>microphone</strong> and <strong>speech recognition</strong>. Allow both. (Clicked Don't Allow? The same button then reads <strong>Open System Settings…</strong> and takes you to the right place.)</li>
       <li>Ottl's window asks for <strong>Accessibility</strong>, which it needs to type into other apps. System Settings → Privacy &amp; Security → Accessibility → turn on Ottl, then quit and reopen Ottl.</li>
       <li>Put the cursor in any text field, hold <kbd>fn</kbd>, speak, release. Double‑tap <kbd>fn</kbd> to keep listening hands‑free; tap once to stop.</li>
       <li>If pressing <kbd>fn</kbd> also opens the emoji picker, switches your keyboard, or starts Apple's own dictation, set System Settings → Keyboard → <strong>Press 🌐 key to</strong> → <strong>Do Nothing</strong>, and turn off Apple Dictation's “Press 🌐 twice” shortcut.</li>
@@ -132,7 +132,7 @@ footer a{color:var(--muted)}
     var mb=(dmg.size/1048576).toFixed(1);
     var ver=(rel.tag_name||'').replace(/^v/,'');
     btn.textContent='Download Ottl '+ver+' for Mac';
-    document.getElementById('meta').innerHTML='<code>'+dmg.name+'</code> · '+mb+' MB · Apple silicon · macOS 14 or later · signed and notarized by Apple';
+    document.getElementById('meta').innerHTML='<code>'+dmg.name+'</code> · '+mb+' MB · Apple silicon and Intel · macOS 14 or later · signed and notarized by Apple';
     var c=document.getElementById('checksum'); c.href=rel.html_url; c.textContent='Release notes and SHA‑256 for '+ver;
   }).catch(function(){});
 })();

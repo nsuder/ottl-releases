@@ -7,17 +7,16 @@ only the signed, notarized builds and the download page.
 - **Download page:** https://nsuder.github.io/ottl-releases/
 - **All releases:** https://github.com/nsuder/ottl-releases/releases
 
-Requirements: an Apple silicon Mac with macOS 14 Sonoma or later (Intel
-support arrives with 0.1.61). US English only for now. Every build is signed with a Developer
+Requirements: macOS 14 Sonoma or later, on Apple silicon or Intel (from
+0.1.61; 0.1.60 is Apple silicon only). US English only for now. Every build is signed with a Developer
 ID certificate and notarized by Apple, so it opens without warnings.
 
 ## Install
 
 1. Open the `.dmg` and drag **Ottl** into **Applications**.
 2. Open Ottl and click **Enable dictation**; allow **Microphone** and
-   **Speech Recognition** when macOS asks. If you clicked Don't Allow, turn Ottl
-   on in System Settings → Privacy & Security → Microphone and → Speech
-   Recognition.
+   **Speech Recognition** when macOS asks. If you clicked Don't Allow, the same
+   button reads **Open System Settings…** and opens the right pane.
 3. Grant **Accessibility** (System Settings → Privacy & Security →
    Accessibility → Ottl), then quit and reopen Ottl.
 4. Put the cursor in any text field, hold **fn**, speak, release. If fn also
