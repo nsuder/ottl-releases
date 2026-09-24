@@ -74,7 +74,7 @@ footer a{color:var(--muted)}
     <h1>Hold a key.<br>Speak. Release.</h1>
     <p class="lede">Ottl is native dictation for the Mac. Your words land in whatever app you're typing in. A small axolotl shows you exactly when the microphone is on.</p>
     <a class="cta" id="download" href="https://github.com/nsuder/ottl-releases/releases/latest">Download for Mac</a>
-    <div class="meta" id="meta">Apple silicon and Intel · macOS 14 Sonoma or later · signed and notarized by Apple</div>
+    <div class="meta" id="meta">Apple silicon Macs · macOS 14 Sonoma or later · signed and notarized by Apple</div>
   </div>
   <img class="axo" src="axolotl.png" alt="Ottl's pixel axolotl" width="249" height="132">
 </section>
@@ -84,9 +84,10 @@ footer a{color:var(--muted)}
   <div class="body">
     <ol>
       <li>Open the downloaded <strong>.dmg</strong> and drag <strong>Ottl</strong> into <strong>Applications</strong>.</li>
-      <li>Open Ottl from Applications. macOS asks about the <strong>microphone</strong> and <strong>speech recognition</strong>. Allow both.</li>
+      <li>Open Ottl from Applications and click <strong>Enable dictation</strong> in its window. macOS then asks about the <strong>microphone</strong> and <strong>speech recognition</strong>. Allow both. (Clicked Don't Allow? The same button now reads <strong>Open System Settings…</strong> in 0.1.61; until then, turn Ottl on in System Settings → Privacy &amp; Security → Microphone and → Speech Recognition.)</li>
       <li>Ottl's window asks for <strong>Accessibility</strong>, which it needs to type into other apps. System Settings → Privacy &amp; Security → Accessibility → turn on Ottl, then quit and reopen Ottl.</li>
       <li>Put the cursor in any text field, hold <kbd>fn</kbd>, speak, release. Double‑tap <kbd>fn</kbd> to keep listening hands‑free; tap once to stop.</li>
+      <li>If pressing <kbd>fn</kbd> also opens the emoji picker, switches your keyboard, or starts Apple's own dictation, set System Settings → Keyboard → <strong>Press 🌐 key to</strong> → <strong>Do Nothing</strong>, and turn off Apple Dictation's “Press 🌐 twice” shortcut.</li>
       <li>Highlight text and hold <kbd>Control</kbd> + <kbd>fn</kbd> to rewrite it with a spoken instruction.</li>
     </ol>
   </div>
@@ -95,7 +96,7 @@ footer a{color:var(--muted)}
 <section class="grid" id="keys">
   <h2>Early access: bring your keys</h2>
   <div class="body">
-    <p class="note">This is an early build for invited testers. Ottl's best results come from two cloud services, and for now you connect your own accounts: an <strong>AssemblyAI</strong> key for speech and a <strong>Groq</strong> key for cleanup and rewriting. Paste both in Ottl → Settings and click <strong>Test cloud connection</strong>. Keys stay in your Mac's Keychain. Without keys, Ottl uses Apple's on‑device recognition.</p>
+    <p class="note">This is an early build for invited testers. Ottl's best results come from two cloud services, and for now you connect your own accounts: an <strong>AssemblyAI</strong> key for speech and a <strong>Groq</strong> key for cleanup and rewriting. Paste them in Ottl → Settings → <strong>Cloud</strong>, turn cloud services on, and click <strong>Test</strong> to check the AssemblyAI key. If you choose <strong>Groq Whisper</strong> as the speech provider, the Groq key alone is enough. Keys stay in your Mac's Keychain. Without keys, Ottl uses Apple's on‑device recognition. Ottl understands US English only for now.</p>
   </div>
 </section>
 
@@ -109,7 +110,7 @@ footer a{color:var(--muted)}
 <section class="grid" id="problem">
   <h2>Report a problem</h2>
   <div class="body">
-    <p>Ottl's window → Settings → copy the <strong>Last delivery attempt</strong> and <strong>Last recording</strong> lines and send them to Nic with one line about what happened. They contain no text you dictated.</p>
+    <p><a href="https://github.com/nsuder/ottl-releases/issues/new">Open an issue</a> with one line about what happened, plus the <strong>Last recording</strong> and <strong>Last delivery</strong> lines from Ottl → Settings → <strong>Diagnostics</strong>. Those lines contain no text you dictated. Issues are public, so leave out anything private.</p>
   </div>
 </section>
 
@@ -131,7 +132,7 @@ footer a{color:var(--muted)}
     var mb=(dmg.size/1048576).toFixed(1);
     var ver=(rel.tag_name||'').replace(/^v/,'');
     btn.textContent='Download Ottl '+ver+' for Mac';
-    document.getElementById('meta').innerHTML='<code>'+dmg.name+'</code> · '+mb+' MB · macOS 14 or later · signed and notarized by Apple';
+    document.getElementById('meta').innerHTML='<code>'+dmg.name+'</code> · '+mb+' MB · Apple silicon · macOS 14 or later · signed and notarized by Apple';
     var c=document.getElementById('checksum'); c.href=rel.html_url; c.textContent='Release notes and SHA‑256 for '+ver;
   }).catch(function(){});
 })();
